@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  width: 60%;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: bisque;
+}
+nav ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  gap: 1rem;
+}
+nav ul a {
+  display: inline-block;
+  padding: 0.4rem 1.4rem;
+  text-decoration: none;
+  position: relative;
+}
+nav ul a::before,
+nav ul a::after {
+  display: inline-block;
+  content: '';
+  width: 100%;
+  height: 2px;
+  transform: scaleX(0);
+  background-color: #000;
+  position: absolute;
+  left: 0;
+  transition: transform 0.3s;
+}
+nav ul a::before {
+  transform-origin: left;
+  top: 0;
+}
+nav ul a::after {
+  transform-origin: right;
+  bottom: 0;
+}
+nav ul a:hover::before,
+nav ul a:hover::after {
+  transform: scaleX(1);
+}
